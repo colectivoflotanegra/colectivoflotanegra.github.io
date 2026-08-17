@@ -326,7 +326,75 @@
                 display: none;
             }
         }
+/* =========================
+   CONTACTO
+========================= */
 
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 80px;
+
+    max-width: 1000px;
+}
+
+.contact-item h3 {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.contact-item p {
+    color: #aaa;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+.contact-item a {
+    display: block;
+
+    color: #ddd;
+    text-decoration: none;
+
+    margin-bottom: 14px;
+
+    transition: opacity 0.3s ease;
+}
+
+.contact-item a:hover {
+    opacity: 0.5;
+}
+
+.contact-item .map-button {
+    display: inline-block;
+
+    border: 1px solid #555;
+
+    padding: 12px 20px;
+
+    margin-top: 5px;
+
+    color: white;
+}
+
+.contact-item .map-button:hover {
+    background: white;
+    color: black;
+    opacity: 1;
+}
+
+
+/* =========================
+   CONTACTO EN CELULAR
+========================= */
+
+@media (max-width: 700px) {
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+}
     </style>
 </head>
 
