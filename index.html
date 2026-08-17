@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Colectivo Flota Negra | Grupo Editor</title>
+
+    <meta name="description" content="Colectivo Flota Negra, grupo editor independiente y autogestivo. Libros, autores y proyectos editoriales.">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #0b0b0b;
+            color: #f2f2f2;
+            overflow-x: hidden;
+        }
+
+        /* =========================
+           NAVEGACIÓN
+        ========================= */
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+
+            padding: 22px 5%;
+
+            background: rgba(11, 11, 11, 0.82);
+            backdrop-filter: blur(10px);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: auto;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .menu {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .menu a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 13px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+
+            transition: opacity 0.3s ease;
+        }
+
+        .menu a:hover {
+            opacity: 0.55;
+        }
+
+        /* =========================
+           PORTADA
+        ========================= */
+
+        .hero {
+            min-height: 100vh;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            padding: 140px 7% 80px;
+
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 950px;
+        }
+
+        .hero h1 {
+            font-size: clamp(48px, 9vw, 110px);
+            line-height: 0.95;
+            letter-spacing: -4px;
+            font-weight: 700;
+            margin-bottom: 35px;
+        }
+
+        .hero-subtitle {
+            max-width: 700px;
+            margin: auto;
+
+            font-size: 18px;
+            line-height: 1.7;
+
+            color: #cfcfcf;
+        }
+
+        .scroll-indicator {
+            margin-top: 70px;
+            font-size: 11px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            opacity: 0.5;
+        }
+
+        /* =========================
+           SECCIONES
+        ========================= */
+
+        section {
+            padding: 110px 5%;
+            max-width: 1400px;
+            margin: auto;
+        }
+
+        .section-title {
+            font-size: 38px;
+            margin-bottom: 45px;
+            letter-spacing: -1px;
+        }
+
+        /* =========================
+           LIBROS
+        ========================= */
+
+        .books-wrapper {
+            position: relative;
+        }
+
+        .books {
+            display: flex;
+            gap: 30px;
+
+            overflow-x: auto;
+            overflow-y: hidden;
+
+            padding: 10px 5px 35px;
+
+            scroll-behavior: smooth;
+
+            scrollbar-width: thin;
+        }
+
+        .books::-webkit-scrollbar {
+            height: 5px;
+        }
+
+        .book {
+            flex: 0 0 230px;
+
+            transition:
+                transform 0.3s ease,
+                opacity 0.3s ease;
+
+            cursor: pointer;
+        }
+
+        .book:hover {
+            transform: translateY(-10px);
+        }
+
+        .book-cover {
+            width: 230px;
+            height: 330px;
+
+            background: #222;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            overflow: hidden;
+        }
+
+        .book-cover img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .book-placeholder {
+            color: #777;
+            font-size: 12px;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .book-title {
+            margin-top: 15px;
+
+            font-size: 16px;
+            line-height: 1.3;
+        }
+
+        .book-publisher {
+            margin-top: 6px;
+
+            font-size: 12px;
+            color: #888;
+        }
+
+        /* =========================
+           FLECHAS
+        ========================= */
+
+        .book-buttons {
+            display: flex;
+            gap: 10px;
+
+            position: absolute;
+            right: 0;
+            top: -75px;
+        }
+
+        .book-buttons button {
+            width: 42px;
+            height: 42px;
+
+            border: 1px solid #555;
+            background: transparent;
+            color: white;
+
+            cursor: pointer;
+
+            font-size: 18px;
+
+            transition: background 0.3s ease;
+        }
+
+        .book-buttons button:hover {
+            background: #fff;
+            color: #000;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            border-top: 1px solid #222;
+
+            padding: 50px 5%;
+
+            text-align: center;
+
+            color: #777;
+            font-size: 13px;
+        }
+
+        /* =========================
+           CELULAR
+        ========================= */
+
+        @media (max-width: 700px) {
+
+            header {
+                padding: 18px 20px;
+            }
+
+            nav {
+                flex-direction: column;
+                gap: 18px;
+            }
+
+            .menu {
+                gap: 16px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .menu a {
+                font-size: 10px;
+            }
+
+            .hero {
+                padding: 160px 25px 80px;
+            }
+
+            .hero h1 {
+                letter-spacing: -2px;
+            }
+
+            .hero-subtitle {
+                font-size: 16px;
+            }
+
+            section {
+                padding: 80px 20px;
+            }
+
+            .book {
+                flex-basis: 190px;
+            }
+
+            .book-cover {
+                width: 190px;
+                height: 275px;
+            }
+
+            .book-buttons {
+                display: none;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+    <!-- =========================
+         NAVEGACIÓN
+    ========================= -->
+
+    <header>
+
+        <nav>
+
+            <a href="#" class="logo">
+                COLECTIVO FLOTA NEGRA
+            </a>
+
+            <ul class="menu">
+
+                <li>
+                    <a href="#editoriales">Editoriales</a>
+                </li>
+
+                <li>
+                    <a href="#quienes-somos">Quiénes somos</a>
+                </li>
+
+                <li>
+                    <a href="#libros">Libros</a>
+                </li>
+
+                <li>
+                    <a href="#contacto">Contacto</a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+
+    <!-- =========================
+         PORTADA
+    ========================= -->
+
+    <main>
+
+        <section class="hero">
+
+            <div class="hero-content">
+
+                <h1>
+                    COLECTIVO<br>
+                    FLOTA NEGRA
+                </h1>
+
+                <p class="hero-subtitle">
+
+                    Grupo editor independiente y autogestivo,
+                    nacido para abrir espacio a voces, historias
+                    y obras que muchas veces quedan fuera de los
+                    circuitos editoriales tradicionales.
+
+                </p>
+
+                <div class="scroll-indicator">
+                    Descubrir ↓
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             LIBROS
+        ========================= -->
+
+        <section id="libros">
+
+            <h2 class="section-title">
+                Libros
+            </h2>
+
+            <div class="books-wrapper">
+
+                <div class="book-buttons">
+
+                    <button onclick="scrollBooks(-1)">
+                        ←
+                    </button>
+
+                    <button onclick="scrollBooks(1)">
+                        →
+                    </button>
+
+                </div>
+
+
+                <div class="books" id="books">
+
+
+                    <!-- LIBRO 1 -->
+
+                    <article class="book">
+
+                        <div class="book-cover">
+
+                            <div class="book-placeholder">
+                                PORTADA<br>
+                                ESCÚCHATE ESTO!
+                            </div>
+
+                        </div>
+
+                        <h3 class="book-title">
+                            ¡Escúchate Esto!
+                        </h3>
+
+                        <p class="book-publisher">
+                            Grupo Editor Colectivo Flota Negra
+                        </p>
+
+                    </article>
+
+
+                    <!-- LIBRO 2 -->
+
+                    <article class="book">
+
+                        <div class="book-cover">
+
+                            <div class="book-placeholder">
+                                PORTADA<br>
+                                TOOTS HIBBERT
+                            </div>
+
+                        </div>
+
+                        <h3 class="book-title">
+                            La Leyenda de Toots Hibbert
+                        </h3>
+
+                        <p class="book-publisher">
+                            Grupo Editor Colectivo Flota Negra
+                        </p>
+
+                    </article>
+
+
+                    <!-- LIBRO 3 -->
+
+                    <article class="book">
+
+                        <div class="book-cover">
+
+                            <div class="book-placeholder">
+                                PORTADA<br>
+                                UNA CANCIÓN HIZO LA DIFERENCIA
+                            </div>
+
+                        </div>
+
+                        <h3 class="book-title">
+                            Una canción hizo la diferencia
+                        </h3>
+
+                        <p class="book-publisher">
+                            Grupo Editor Colectivo Flota Negra
+                        </p>
+
+                    </article>
+
+
+                    <!-- LIBRO 4 -->
+
+                    <article class="book">
+
+                        <div class="book-cover">
+
+                            <div class="book-placeholder">
+                                PORTADA<br>
+                                AQUELARRE DE NEGRAS
+                            </div>
+
+                        </div>
+
+                        <h3 class="book-title">
+                            Aquelarre de Negras
+                        </h3>
+
+                        <p class="book-publisher">
+                            Grupo Editor Colectivo Flota Negra
+                        </p>
+
+                    </article>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             SECCIONES FUTURAS
+        ========================= -->
+
+        <section id="editoriales">
+
+            <h2 class="section-title">
+                Editoriales
+            </h2>
+
+            <p>
+                Grupo Editor Colectivo Flota Negra ·
+                Minton Ediciones ·
+                Izquierda en Cross
+            </p>
+
+        </section>
+
+
+        <section id="quienes-somos">
+
+            <h2 class="section-title">
+                Quiénes somos
+            </h2>
+
+        </section>
+
+
+        <section id="contacto">
+
+            <h2 class="section-title">
+                Contacto
+            </h2>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
+    <footer>
+
+        © 2026 Colectivo Flota Negra · Grupo Editor
+
+    </footer>
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================= -->
+
+    <script>
+
+        function scrollBooks(direction) {
+
+            const books = document.getElementById("books");
+
+            const amount = 500;
+
+            books.scrollBy({
+                left: direction * amount,
+                behavior: "smooth"
+            });
+
+        }
+
+    </script>
+
+</body>
+</html>
