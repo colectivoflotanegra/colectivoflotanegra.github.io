@@ -164,18 +164,32 @@
         }
 
         .books {
-            display: flex;
-            gap: 30px;
+    display: flex;
+    gap: 30px;
 
-            overflow-x: auto;
-            overflow-y: hidden;
+    overflow-x: auto;
+    overflow-y: hidden;
 
-            padding: 10px 5px 35px;
+    padding: 10px 5px 35px;
 
-            scroll-behavior: smooth;
+    scroll-behavior: smooth;
 
-            scrollbar-width: thin;
-        }
+    scrollbar-width: none;
+
+    cursor: grab;
+
+    user-select: none;
+
+    -webkit-overflow-scrolling: touch;
+}
+
+.books::-webkit-scrollbar {
+    display: none;
+}
+
+.books:active {
+    cursor: grabbing;
+}
 
         .books::-webkit-scrollbar {
             height: 5px;
@@ -502,18 +516,6 @@
     </h2>
 
     <div class="books-wrapper">
-
-        <div class="book-buttons">
-
-            <button onclick="scrollBooks(-1)">
-                ←
-            </button>
-
-            <button onclick="scrollBooks(1)">
-                →
-            </button>
-
-        </div>
 
 
         <div class="books" id="books">
