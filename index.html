@@ -360,6 +360,47 @@
     object-fit: contain;
 }
         /* =========================
+   QUIÉNES SOMOS
+========================= */
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 80px;
+
+    align-items: center;
+
+    max-width: 1100px;
+}
+
+.about-text h3 {
+    font-size: 28px;
+    line-height: 1.25;
+    margin-bottom: 30px;
+}
+
+.about-text p {
+    color: #bdbdbd;
+    font-size: 17px;
+    line-height: 1.7;
+    margin-bottom: 22px;
+}
+
+.about-image {
+    display: flex;
+    justify-content: center;
+}
+
+.about-image img {
+    width: 100%;
+    max-width: 450px;
+    height: auto;
+
+    display: block;
+
+    object-fit: cover;
+}
+        /* =========================
            FOOTER
         ========================= */
 
@@ -834,13 +875,55 @@
 </section>
 
 
-        <section id="quienes-somos">
+       <section id="quienes-somos">
 
-            <h2 class="section-title">
-                Quiénes somos
-            </h2>
+    <h2 class="section-title">
+        Quiénes somos
+    </h2>
 
-        </section>
+    <div class="about-grid">
+
+        <div class="about-text">
+
+            <h3>
+                Una propuesta editorial afrocentrada,
+                autogestiva y cooperativa
+            </h3>
+
+            <p>
+                Con el objetivo de brindar un espacio genuino para la
+                difusión de la cultura afrocentrada, el Grupo Editor
+                Colectivo Flota Negra consolida su presencia en el
+                mercado editorial independiente.
+            </p>
+
+            <p>
+                Fundada en julio de 2023 por Roberto Ruiz Sena
+                (conocido como "Malungo"), la editorial nació tras
+                una década de trabajo en la temática bibliográfica
+                afrocentrada.
+            </p>
+
+            <p>
+                El proyecto surge como respuesta a la falta de espacios
+                en editoriales convencionales. Junto al escritor y
+                editor Tony Vardé, llevan adelante esta iniciativa en
+                la que escritor y editor hablan el mismo idioma cultural.
+            </p>
+
+        </div>
+
+        <div class="about-image">
+
+            <img
+                src="somos/rupert_tony.jpg"
+                alt="Roberto Ruiz Sena y Tony Vardé">
+
+        </div>
+
+    </div>
+
+</section>
 
 
        <section id="contacto">
