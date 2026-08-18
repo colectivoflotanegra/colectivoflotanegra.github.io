@@ -1,3 +1,10 @@
+Sí. Te lo paso completo, con **únicamente el orden corregido**:
+
+**Quiénes somos → Editoriales → Catálogo → Contacto**
+
+No voy a cambiar textos, imágenes, estilos, tamaños, funciones ni contenido de los libros. Mantengo incluso los detalles que ya estaban en tu código para no introducir cambios colaterales.
+
+```html
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -100,19 +107,21 @@
         .hero-content {
             max-width: 950px;
         }
-.hero-title {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 15px;
-}
 
-.hero-title img {
-    width: 230px;
-    height: 230px;
-    object-fit: contain;
-    transform: translateX(-50px);
-}
+        .hero-title {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .hero-title img {
+            width: 230px;
+            height: 230px;
+            object-fit: contain;
+            transform: translateX(-50px);
+        }
+
         .hero h1 {
             font-size: clamp(48px, 9vw, 110px);
             line-height: 0.95;
@@ -153,6 +162,7 @@
             font-size: 38px;
             margin-bottom: 45px;
             letter-spacing: -1px;
+            white-space: nowrap;
         }
 
         /* =========================
@@ -164,32 +174,32 @@
         }
 
         .books {
-    display: flex;
-    gap: 30px;
+            display: flex;
+            gap: 30px;
 
-    overflow-x: auto;
-    overflow-y: hidden;
+            overflow-x: auto;
+            overflow-y: hidden;
 
-    padding: 10px 5px 35px;
+            padding: 10px 5px 35px;
 
-    scroll-behavior: smooth;
+            scroll-behavior: smooth;
 
-    scrollbar-width: none;
+            scrollbar-width: none;
 
-    cursor: grab;
+            cursor: grab;
 
-    user-select: none;
+            user-select: none;
 
-    -webkit-overflow-scrolling: touch;
-}
+            -webkit-overflow-scrolling: touch;
+        }
 
-.books::-webkit-scrollbar {
-    display: none;
-}
+        .books::-webkit-scrollbar {
+            display: none;
+        }
 
-.books:active {
-    cursor: grabbing;
-}
+        .books:active {
+            cursor: grabbing;
+        }
 
         .books::-webkit-scrollbar {
             height: 5px;
@@ -253,40 +263,42 @@
         /* =========================
            FLECHAS
         ========================= */
-.carousel-arrow {
-    position: absolute;
 
-    top: 50%;
-    transform: translateY(-50%);
+        .carousel-arrow {
+            position: absolute;
 
-    width: 42px;
-    height: 42px;
+            top: 50%;
+            transform: translateY(-50%);
 
-    border: 1px solid #555;
-    background: rgba(11, 11, 11, 0.85);
-    color: white;
+            width: 42px;
+            height: 42px;
 
-    cursor: pointer;
+            border: 1px solid #555;
+            background: rgba(11, 11, 11, 0.85);
+            color: white;
 
-    font-size: 20px;
+            cursor: pointer;
 
-    z-index: 10;
+            font-size: 20px;
 
-    transition: background 0.3s ease;
-}
+            z-index: 10;
 
-.carousel-arrow:hover {
-    background: white;
-    color: black;
-}
+            transition: background 0.3s ease;
+        }
 
-.carousel-left {
-    left: -10px;
-}
+        .carousel-arrow:hover {
+            background: white;
+            color: black;
+        }
 
-.carousel-right {
-    right: -10px;
-}
+        .carousel-left {
+            left: -10px;
+        }
+
+        .carousel-right {
+            right: -10px;
+        }
+
         .book-buttons {
             display: flex;
             gap: 10px;
@@ -315,226 +327,231 @@
             background: #fff;
             color: #000;
         }
-/* =========================
-   EDITORIALES
-========================= */
 
-.editoriales-description {
-    max-width: 800px;
-    margin-bottom: 60px;
-
-    color: #bdbdbd;
-    font-size: 17px;
-    line-height: 1.7;
-}
-
-.editoriales-description strong {
-    display: block;
-    color: #f2f2f2;
-    font-size: 20px;
-    margin-bottom: 15px;
-}
-
-.editoriales-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 50px;
-
-    align-items: center;
-}
-
-.editorial {
-    height: 180px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    padding: 20px;
-}
-
-.editorial img {
-    max-width: 100%;
-    max-height: 140px;
-
-    object-fit: contain;
-}
         /* =========================
-   QUIÉNES SOMOS
-========================= */
+           EDITORIALES
+        ========================= */
 
-.about-grid {
-    display: grid;
-    grid-template-columns: 1.2fr 0.8fr;
-    gap: 80px;
+        .editoriales-description {
+            max-width: 800px;
+            margin-bottom: 60px;
 
-    align-items: center;
+            color: #bdbdbd;
+            font-size: 17px;
+            line-height: 1.7;
+        }
 
-    max-width: 1100px;
-}
+        .editoriales-description strong {
+            display: block;
+            color: #f2f2f2;
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
 
-.about-text h3 {
-    font-size: 28px;
-    line-height: 1.25;
-    margin-bottom: 30px;
-}
+        .editoriales-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 50px;
 
-.about-text p {
-    color: #bdbdbd;
-    font-size: 17px;
-    line-height: 1.7;
-    margin-bottom: 22px;
-}
+            align-items: center;
+        }
 
-.about-image {
-    display: flex;
-    justify-content: center;
-}
+        .editorial {
+            height: 180px;
 
-.about-image img {
-    width: 100%;
-    max-width: 450px;
-    height: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
 
-    display: block;
+            padding: 20px;
+        }
 
-    object-fit: cover;
-}
+        .editorial img {
+            max-width: 100%;
+            max-height: 140px;
+
+            object-fit: contain;
+        }
+
         /* =========================
-   POPUP DE LIBRO
-========================= */
+           QUIÉNES SOMOS
+        ========================= */
 
-.book-popup {
-    display: none;
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 80px;
 
-    position: fixed;
-    inset: 0;
+            align-items: center;
 
-    background: rgba(0, 0, 0, 0.85);
+            max-width: 1100px;
+        }
 
-    z-index: 2000;
+        .about-text h3 {
+            font-size: 28px;
+            line-height: 1.25;
+            margin-bottom: 30px;
+        }
 
-    align-items: center;
-    justify-content: center;
+        .about-text p {
+            color: #bdbdbd;
+            font-size: 17px;
+            line-height: 1.7;
+            margin-bottom: 22px;
+        }
 
-    padding: 30px;
-}
+        .about-image {
+            display: flex;
+            justify-content: center;
+        }
 
-.book-popup.active {
-    display: flex;
-}
+        .about-image img {
+            width: 100%;
+            max-width: 450px;
+            height: auto;
 
-.book-popup-content {
-    position: relative;
+            display: block;
 
-    width: 100%;
-    max-width: 850px;
+            object-fit: cover;
+        }
 
-    max-height: 90vh;
-
-    overflow-y: auto;
-
-    background: #111;
-
-    border: 1px solid #333;
-
-    padding: 50px;
-}
-
-.book-popup-close {
-    position: absolute;
-
-    top: 15px;
-    right: 20px;
-
-    background: none;
-    border: none;
-
-    color: white;
-
-    font-size: 32px;
-
-    cursor: pointer;
-}
-
-.book-popup-inner {
-    display: grid;
-
-    grid-template-columns: 280px 1fr;
-
-    gap: 50px;
-
-    align-items: center;
-}
-
-.book-popup-cover img {
-    width: 100%;
-    height: auto;
-
-    display: block;
-}
-
-.book-popup-text h2 {
-    font-size: 32px;
-
-    margin-bottom: 10px;
-}
-
-.book-popup-text > p {
-    color: #888;
-
-    font-size: 13px;
-
-    margin-bottom: 25px;
-}
-
-.book-popup-text #popupDescription {
-    color: #cfcfcf;
-
-    font-size: 16px;
-
-    line-height: 1.7;
-}
         /* =========================
-   POPUP EN CELULAR
-========================= */
+           POPUP DE LIBRO
+        ========================= */
 
-@media (max-width: 700px) {
+        .book-popup {
+            display: none;
 
-    .book-popup {
-        padding: 15px;
-    }
+            position: fixed;
+            inset: 0;
 
-    .book-popup-content {
-        max-height: 90vh;
-        padding: 40px 25px 30px;
-    }
+            background: rgba(0, 0, 0, 0.85);
 
-    .book-popup-inner {
-        grid-template-columns: 1fr;
-        gap: 25px;
-    }
+            z-index: 2000;
 
-    .book-popup-cover {
-        text-align: center;
-    }
+            align-items: center;
+            justify-content: center;
 
-    .book-popup-cover img {
-        width: 180px;
-        max-width: 100%;
-        margin: auto;
-    }
+            padding: 30px;
+        }
 
-    .book-popup-text h2 {
-        font-size: 25px;
-    }
+        .book-popup.active {
+            display: flex;
+        }
 
-    .book-popup-text #popupDescription {
-        font-size: 15px;
-        text-align: justify;
-    }
+        .book-popup-content {
+            position: relative;
 
-}
+            width: 100%;
+            max-width: 850px;
+
+            max-height: 90vh;
+
+            overflow-y: auto;
+
+            background: #111;
+
+            border: 1px solid #333;
+
+            padding: 50px;
+        }
+
+        .book-popup-close {
+            position: absolute;
+
+            top: 15px;
+            right: 20px;
+
+            background: none;
+            border: none;
+
+            color: white;
+
+            font-size: 32px;
+
+            cursor: pointer;
+        }
+
+        .book-popup-inner {
+            display: grid;
+
+            grid-template-columns: 280px 1fr;
+
+            gap: 50px;
+
+            align-items: center;
+        }
+
+        .book-popup-cover img {
+            width: 100%;
+            height: auto;
+
+            display: block;
+        }
+
+        .book-popup-text h2 {
+            font-size: 32px;
+
+            margin-bottom: 10px;
+        }
+
+        .book-popup-text > p {
+            color: #888;
+
+            font-size: 13px;
+
+            margin-bottom: 25px;
+        }
+
+        .book-popup-text #popupDescription {
+            color: #cfcfcf;
+
+            font-size: 16px;
+
+            line-height: 1.7;
+        }
+
+        /* =========================
+           POPUP EN CELULAR
+        ========================= */
+
+        @media (max-width: 700px) {
+
+            .book-popup {
+                padding: 15px;
+            }
+
+            .book-popup-content {
+                max-height: 90vh;
+                padding: 40px 25px 30px;
+            }
+
+            .book-popup-inner {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .book-popup-cover {
+                text-align: center;
+            }
+
+            .book-popup-cover img {
+                width: 180px;
+                max-width: 100%;
+                margin: auto;
+            }
+
+            .book-popup-text h2 {
+                font-size: 25px;
+            }
+
+            .book-popup-text #popupDescription {
+                font-size: 15px;
+                text-align: justify;
+            }
+
+        }
+
         /* =========================
            FOOTER
         ========================= */
@@ -559,11 +576,16 @@
             header {
                 padding: 18px 20px;
             }
+.section-title {
+    font-size: 32px;
+    white-space: nowrap;
+}
             .logo {
                 font-size: 11px;
                 letter-spacing: 1px;
                 white-space: nowrap;
             }
+
             nav {
                 flex-direction: column;
                 gap: 18px;
@@ -589,6 +611,7 @@
             .hero h1 {
                 letter-spacing: -2px;
             }
+
             .hero-title {
                 gap: 8px;
                 width: 100%;
@@ -606,6 +629,7 @@
                 transform: none;
                 flex-shrink: 0;
             }
+
             .hero-subtitle {
                 font-size: 16px;
             }
@@ -626,110 +650,112 @@
             .book-buttons {
                 display: none;
             }
-                /* EDITORIALES EN CELULAR */
 
-    .editoriales-grid {
-        grid-template-columns: 1fr;
-        gap: 25px;
-    }
+            /* EDITORIALES EN CELULAR */
 
-    .editorial {
-        height: 150px;
-    }
+            .editoriales-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
 
-    .editorial img {
-        max-height: 120px;
-    }
+            .editorial {
+                height: 150px;
+            }
 
+            .editorial img {
+                max-height: 120px;
+            }
 
-    /* QUIÉNES SOMOS EN CELULAR */
+            /* QUIÉNES SOMOS EN CELULAR */
 
-    .about-grid {
-        grid-template-columns: 1fr;
-        gap: 40px;
-    }
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
 
-    .about-text h3 {
-        font-size: 24px;
-    }
+            .about-text h3 {
+                font-size: 24px;
+            }
 
-    .about-text p {
-        font-size: 16px;
-    }
+            .about-text p {
+                font-size: 16px;
+            }
 
-    .about-image img {
-        max-width: 100%;
-    }
+            .about-image img {
+                max-width: 100%;
+            }
+
         }
-/* =========================
-   CONTACTO
-========================= */
 
-.contact-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 80px;
+        /* =========================
+           CONTACTO
+        ========================= */
 
-    max-width: 1000px;
-}
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 80px;
 
-.contact-item h3 {
-    font-size: 20px;
-    margin-bottom: 20px;
-}
+            max-width: 1000px;
+        }
 
-.contact-item p {
-    color: #aaa;
-    line-height: 1.6;
-    margin-bottom: 25px;
-}
+        .contact-item h3 {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
 
-.contact-item a {
-    display: block;
+        .contact-item p {
+            color: #aaa;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
 
-    color: #ddd;
-    text-decoration: none;
+        .contact-item a {
+            display: block;
 
-    margin-bottom: 14px;
+            color: #ddd;
+            text-decoration: none;
 
-    transition: opacity 0.3s ease;
-}
+            margin-bottom: 14px;
 
-.contact-item a:hover {
-    opacity: 0.5;
-}
+            transition: opacity 0.3s ease;
+        }
 
-.contact-item .map-button {
-    display: inline-block;
+        .contact-item a:hover {
+            opacity: 0.5;
+        }
 
-    border: 1px solid #555;
+        .contact-item .map-button {
+            display: inline-block;
 
-    padding: 12px 20px;
+            border: 1px solid #555;
 
-    margin-top: 5px;
+            padding: 12px 20px;
 
-    color: white;
-}
+            margin-top: 5px;
 
-.contact-item .map-button:hover {
-    background: white;
-    color: black;
-    opacity: 1;
-}
+            color: white;
+        }
 
+        .contact-item .map-button:hover {
+            background: white;
+            color: black;
+            opacity: 1;
+        }
 
-/* =========================
-   CONTACTO EN CELULAR
-========================= */
+        /* =========================
+           CONTACTO EN CELULAR
+        ========================= */
 
-@media (max-width: 700px) {
+        @media (max-width: 700px) {
 
-    .contact-grid {
-        grid-template-columns: 1fr;
-        gap: 50px;
-    }
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
 
-}
+        }
+
     </style>
 </head>
 
@@ -785,15 +811,15 @@
 
                 <div class="hero-title">
 
-    <h1>
-        COLECTIVO<br>
-        FLOTA NEGRA
-    </h1>
+                    <h1>
+                        COLECTIVO<br>
+                        FLOTA NEGRA
+                    </h1>
 
-    <img src="logos/flota_negro.png"
-         alt="Logo Colectivo Flota Negra">
+                    <img src="logos/flota_negro.png"
+                         alt="Logo Colectivo Flota Negra">
 
-</div>
+                </div>
 
                 <p class="hero-subtitle">
 
@@ -814,453 +840,461 @@
 
 
         <!-- =========================
+             QUIÉNES SOMOS
+        ========================= -->
+
+        <section id="quienes-somos">
+
+            <h2 class="section-title">
+                Quiénes somos
+            </h2>
+
+            <div class="about-grid">
+
+                <div class="about-text">
+
+                    <h3>
+                        Una propuesta editorial afrocentrada,
+                        autogestiva y cooperativa
+                    </h3>
+
+                    <p>
+                        Con el objetivo de brindar un espacio genuino para la
+                        difusión de la cultura afrocentrada, el Grupo Editor
+                        Colectivo Flota Negra consolida su presencia en el
+                        mercado editorial independiente.
+                    </p>
+
+                    <p>
+                        Fundada en julio de 2023 por Roberto Ruiz Sena
+                        (conocido como "Malungo"), la editorial nació tras
+                        una década de trabajo en la temática bibliográfica
+                        afrocentrada.
+                    </p>
+
+                    <p>
+                        El proyecto surge como respuesta a la falta de espacios
+                        en editoriales convencionales. Junto al escritor y
+                        editor Tony Vardé, llevan adelante esta iniciativa en
+                        la que escritor y editor hablan el mismo idioma cultural.
+                    </p>
+
+                </div>
+
+                <div class="about-image">
+
+                    <img
+                        src="somos/rupert_tony.jpg"
+                        alt="Roberto Ruiz Sena y Tony Vardé">
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             EDITORIALES
+        ========================= -->
+
+        <section id="editoriales">
+
+            <h2 class="section-title">
+                Editoriales
+            </h2>
+
+            <p class="editoriales-description">
+
+                <strong>Tres sellos, un mismo proyecto editorial.</strong>
+
+                Con el propósito de ampliar nuestra mirada, creamos dos ramas
+    respaldadas por una misma forma de editar:
+    Minton Ediciones e Izquierda en Cross..
+
+            </p>
+
+            <div class="editoriales-grid">
+
+                <div class="editorial">
+                    <img
+                        src="logos/flota_negro.png"
+                        alt="Grupo Editor Colectivo Flota Negra">
+                </div>
+
+                <div class="editorial">
+                    <img
+                        src="logos/MintonLogoBlue.png"
+                        alt="Minton Ediciones">
+                </div>
+
+                <div class="editorial">
+                    <img
+                        src="logos/IZQUIERDA.png"
+                        alt="Izquierda en Cross">
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
              LIBROS
         ========================= -->
 
+        <section id="libros">
 
-          <section id="libros">
+            <h2 class="section-title">
+                Catálogo
+            </h2>
 
-    <h2 class="section-title">
-        Catálogo
-    </h2>
+            <div class="books-wrapper">
 
-    <div class="books-wrapper">
-<button class="carousel-arrow carousel-left" onclick="scrollBooks(-1)">
-    ←
-</button>
+                <button class="carousel-arrow carousel-left" onclick="scrollBooks(-1)">
+                    ←
+                </button>
 
-        <div class="books" id="books">
+                <div class="books" id="books">
 
 
-            <!-- LIBRO 1 -->
+                    <!-- LIBRO 1 -->
 
-            <article class="book"
-         onclick="openBookPopup(
-             '¡Escúchate Esto! – 75 Joyas de la Música Soul',
-             '2023 · Tony Vardé · Jose Luis Zepi Crespo',
-             'Entre Madrid y Buenos Aires, dos escritores y amantes de la música comparten una lista de canciones de la música soul, cuyos brazos también alcanzan algunas gemas de la música jamaiquina, el blues e incluso el jazz.',
-             'tapas/escuchate.jpg'
-         )">
+                    <article class="book"
+                         onclick="openBookPopup(
+                             '¡Escúchate Esto! – 75 Joyas de la Música Soul',
+                             '2023 · Tony Vardé · Jose Luis Zepi Crespo',
+                             'Entre Madrid y Buenos Aires, dos escritores y amantes de la música comparten una lista de canciones de la música soul, cuyos brazos también alcanzan algunas gemas de la música jamaiquina, el blues e incluso el jazz.',
+                             'tapas/escuchate.jpg'
+                         )">
 
-                <div class="book-cover">
+                        <div class="book-cover">
 
-                    <img src="tapas/escuchate.jpg"
-                         alt="¡Escúchate Esto!">
+                            <img src="tapas/escuchate.jpg"
+                                 alt="¡Escúchate Esto!">
+
+                        </div>
+
+                        <h3 class="book-title">
+                            ¡Escucháte Esto!
+                        </h3>
+
+                        <p class="book-publisher">
+                            Grupo Editor Colectivo Flota Negra
+                        </p>
+
+                    </article>
+
+
+                    <!-- LIBRO 2 -->
+
+                    <article class="book"
+                         onclick="openBookPopup(
+                             'La “Leyenda” de Toots Hibbert – … y el Reggae tuvo Soul',
+                             '2024 · Tony Vardé',
+                             'Recorre el legado de una de las voces más importantes de la música jamaiquina. Desde sus inicios en la iglesia de su pueblo en la Jamaica rural, la historia de Toots Hibbert, el hombre que puso nombre al reggae, se transforma en estas páginas en una leyenda.',
+                             'tapas/toots.jpg'
+                         )">
+
+                        <div class="book-cover">
+
+                            <img src="tapas/toots.jpg"
+                                 alt="La Leyenda de Toots Hibbert">
+
+                        </div>
+
+                        <h3 class="book-title">
+                            La Leyenda de Toots Hibbert
+                        </h3>
+
+                        <p class="book-publisher">
+                            Grupo Editor Colectivo Flota Negra
+                        </p>
+
+                    </article>
+
+
+                    <!-- LIBRO 3 -->
+
+                    <article class="book"
+                         onclick="openBookPopup(
+                             'Una canción hizo la diferencia',
+                             '2025 · Tony Vardé',
+                             'Reúne artistas y canciones que cruzaron la historia de los afroamericanos y el Movimiento por los Derechos Civiles en los Estados Unidos. Desde la esclavitud hasta el Black Lives Matter, más de 150 años de historias de racismo, opresión y violencia policial, atravesadas por artistas que hicieron evolucionar la música desde los spirituals y el góspel hasta el hip hop.',
+                             'tapas/una_cancion.jpg'
+                         )">
+
+                        <div class="book-cover">
+
+                            <img src="tapas/una_cancion.jpg"
+                                 alt="Una canción hizo la diferencia">
+
+                        </div>
+
+                        <h3 class="book-title">
+                            Una canción hizo la diferencia
+                        </h3>
+
+                        <p class="book-publisher">
+                            Grupo Editor Colectivo Flota Negra
+                        </p>
+
+                    </article>
+
+
+                    <!-- LIBRO 4 -->
+
+                    <article class="book"
+                         onclick="openBookPopup(
+                             'Aquelarre de Negras – Unidas por la lucha',
+                             '2026 · Varias autoras · Coordinación del proyecto: Melina Schweizer',
+                             'Compilación poética y política que reúne voces afrodescendientes, originarias y disidentes desde una perspectiva antirracista y antipatriarcal. Este libro es un acto político-cultural, una conversación colectiva que desarma silencios históricos y enciende memoria.',
+                             'tapas/aquelarre.png'
+                         )">
+
+                        <div class="book-cover">
+
+                            <img src="tapas/aquelarre.png"
+                                 alt="Aquelarre de Negras">
+
+                        </div>
+
+                        <h3 class="book-title">
+                            Aquelarre de Negras
+                        </h3>
+
+                        <p class="book-publisher">
+                            Grupo Editor Colectivo Flota Negra
+                        </p>
+
+                    </article>
+
+
+                    <!-- LIBRO 5 -->
+
+                    <article class="book"
+                         onclick="openBookPopup(
+                             'Con el tiempo de su lado – Crónicas sobre los Rolling Stones',
+                             '2026 · Esteban Schoj',
+                             'El primer libro de Esteban Schoj recopila artículos publicados entre 2014 y 2026 en el diario Tiempo Argentino. Revisa discos icónicos, giras e hitos históricos, destacando el vínculo inquebrantable de la banda británica con la Argentina.',
+                             'tapas/con_el_tiempo.png'
+                         )">
+
+                        <div class="book-cover">
+
+                            <img src="tapas/con_el_tiempo.png"
+                                 alt="Con el tiempo de su lado – Crónicas sobre los Rolling Stones">
+
+                        </div>
+
+                        <h3 class="book-title">
+                            Con el tiempo
+                        </h3>
+
+                        <p class="book-publisher">
+                            Grupo Editor Colectivo Flota Negra
+                        </p>
+
+                    </article>
+
+
+                    <!-- LIBRO 6 -->
+
+                    <article class="book"
+                         onclick="openBookPopup(
+                             'Etiopía: Tierra de Dioses',
+                             '2026 · Osvaldo González aka Mane Congo',
+                             'Publicada por primera vez en Buenos Aires, este libro es una invitación a descubrir el corazón sagrado del África ancestral. El autor uruguayo Osvaldo González nos guía por un paisaje espiritual y cultural donde mito, historia y fe se entrelazan para revelar la grandeza de una tierra que ha sido cuna de civilizaciones.',
+                             'tapas/etiopia.png'
+                         )">
+
+                        <div class="book-cover">
+
+                            <img src="tapas/etiopia.png"
+                                 alt="Etiopía">
+
+                        </div>
+
+                        <h3 class="book-title">
+                            Etiopía
+                        </h3>
+
+                        <p class="book-publisher">
+                            Grupo Editor Colectivo Flota Negra
+                        </p>
+
+                    </article>
+
+
+                    <!-- LIBRO 7 -->
+
+                    <article class="book"
+                         onclick="openBookPopup(
+                             'Grabando emociones – La Revolución de Stax Records',
+                             '2026 · Tony Vardé',
+                             'Un libro que mezcla vivencia y ensayo, en el que Tony Vardé explora la historia de Stax Records, el legendario sello de soul sureño que unió a músicos blancos y negros en Memphis durante los años 60, convirtiéndose en banda sonora del Movimiento por los Derechos Civiles.',
+                             'tapas/grabando.jpg'
+                         )">
+
+                        <div class="book-cover">
+
+                            <img src="tapas/grabando.jpg"
+                                 alt="Grabando emociones – La Revolución de Stax Records">
+
+                        </div>
+
+                        <h3 class="book-title">
+                            Grabando
+                        </h3>
+
+                        <p class="book-publisher">
+                            Grupo Editor Colectivo Flota Negra
+                        </p>
+
+                    </article>
+
+
+                    <!-- LIBRO 8 -->
+
+                    <article class="book"
+                         onclick="openBookPopup(
+                             'Un pleno al 10 – Crónica de un triunfo épico en Las Vegas',
+                             '2025 · Luciano Jurnet',
+                             'En esta crónica periodística, Luciano Jurnet narra su viaje a Las Vegas para presenciar una pelea crucial: la victoria por nocaut técnico en el décimo round del boxeador santafesino Mirco Cuello frente al mexicano Christian Olivo.',
+                             'tapas/un_pleno.png'
+                         )">
+
+                        <div class="book-cover">
+
+                            <img src="tapas/un_pleno.png"
+                                 alt="Un pleno al 10 – Crónica de un triunfo épico en Las Vegas">
+
+                        </div>
+
+                        <h3 class="book-title">
+                            Un pleno
+                        </h3>
+
+                        <p class="book-publisher">
+                            Grupo Editor Colectivo Flota Negra
+                        </p>
+
+                    </article>
+
 
                 </div>
 
-                <h3 class="book-title">
-                    ¡Escucháte Esto!
-                </h3>
-
-                <p class="book-publisher">
-                    Grupo Editor Colectivo Flota Negra
-                </p>
-
-            </article>
-
-
-            <!-- LIBRO 2 -->
-
-            <article class="book"
-         onclick="openBookPopup(
-             'La “Leyenda” de Toots Hibbert – … y el Reggae tuvo Soul',
-             '2024 · Tony Vardé',
-             'Recorre el legado de una de las voces más importantes de la música jamaiquina. Desde sus inicios en la iglesia de su pueblo en la Jamaica rural, la historia de Toots Hibbert, el hombre que puso nombre al reggae, se transforma en estas páginas en una leyenda.',
-             'tapas/toots.jpg'
-         )">
-
-                <div class="book-cover">
-
-                    <img src="tapas/toots.jpg"
-                         alt="La Leyenda de Toots Hibbert">
-
-                </div>
-
-                <h3 class="book-title">
-                    La Leyenda de Toots Hibbert
-                </h3>
-
-                <p class="book-publisher">
-                    Grupo Editor Colectivo Flota Negra
-                </p>
-
-            </article>
-
-
-            <!-- LIBRO 3 -->
-
-            <article class="book"
-         onclick="openBookPopup(
-             'Una canción hizo la diferencia',
-             '2025 · Tony Vardé',
-             'Reúne artistas y canciones que cruzaron la historia de los afroamericanos y el Movimiento por los Derechos Civiles en los Estados Unidos. Desde la esclavitud hasta el Black Lives Matter, más de 150 años de historias de racismo, opresión y violencia policial, atravesadas por artistas que hicieron evolucionar la música desde los spirituals y el góspel hasta el hip hop.',
-             'tapas/una_cancion.jpg'
-         )">
-
-                <div class="book-cover">
-
-                    <img src="tapas/una_cancion.jpg"
-                         alt="Una canción hizo la diferencia">
-
-                </div>
-
-                <h3 class="book-title">
-                    Una canción hizo la diferencia
-                </h3>
-
-                <p class="book-publisher">
-                    Grupo Editor Colectivo Flota Negra
-                </p>
-
-            </article>
-
-
-            <!-- LIBRO 4 -->
-
-<article class="book"
-     onclick="openBookPopup(
-         'Aquelarre de Negras – Unidas por la lucha',
-         '2026 · Varias autoras · Coordinación del proyecto: Melina Schweizer',
-         'Compilación poética y política que reúne voces afrodescendientes, originarias y disidentes desde una perspectiva antirracista y antipatriarcal. Este libro es un acto político-cultural, una conversación colectiva que desarma silencios históricos y enciende memoria.',
-         'tapas/aquelarre.png'
-     )">
-
-    <div class="book-cover">
-
-        <img src="tapas/aquelarre.png"
-             alt="Aquelarre de Negras">
-
-                </div>
-
-                <h3 class="book-title">
-                    Aquelarre de Negras
-                </h3>
-
-                <p class="book-publisher">
-                    Grupo Editor Colectivo Flota Negra
-                </p>
-
-            </article>
-
-
-            <!-- LIBRO 5 -->
-
-<article class="book"
-     onclick="openBookPopup(
-         'Con el tiempo de su lado – Crónicas sobre los Rolling Stones',
-         '2026 · Esteban Schoj',
-         'El primer libro de Esteban Schoj recopila artículos publicados entre 2014 y 2026 en el diario Tiempo Argentino. Revisa discos icónicos, giras e hitos históricos, destacando el vínculo inquebrantable de la banda británica con la Argentina.',
-         'tapas/con_el_tiempo.png'
-     )">
-
-    <div class="book-cover">
-
-        <img src="tapas/con_el_tiempo.png"
-             alt="Con el tiempo de su lado – Crónicas sobre los Rolling Stones">
-
-                </div>
-
-                <h3 class="book-title">
-                    Con el tiempo
-                </h3>
-
-                <p class="book-publisher">
-                    Grupo Editor Colectivo Flota Negra
-                </p>
-
-            </article>
-
-
-            <!-- LIBRO 6 -->
-
-            <article class="book"
-         onclick="openBookPopup(
-             'Etiopía: Tierra de Dioses',
-             '2026 · Osvaldo González aka Mane Congo',
-             'Publicada por primera vez en Buenos Aires, este libro es una invitación a descubrir el corazón sagrado del África ancestral. El autor uruguayo Osvaldo González nos guía por un paisaje espiritual y cultural donde mito, historia y fe se entrelazan para revelar la grandeza de una tierra que ha sido cuna de civilizaciones.',
-             'tapas/etiopia.png'
-         )">
-
-                <div class="book-cover">
-
-                    <img src="tapas/etiopia.png"
-                         alt="Etiopía">
-
-                </div>
-
-                <h3 class="book-title">
-                    Etiopía
-                </h3>
-
-                <p class="book-publisher">
-                    Grupo Editor Colectivo Flota Negra
-                </p>
-
-            </article>
-
-
-            <!-- LIBRO 7 -->
-
-<article class="book"
-     onclick="openBookPopup(
-         'Grabando emociones – La Revolución de Stax Records',
-         '2026 · Tony Vardé',
-         'Un libro que mezcla vivencia y ensayo, en el que Tony Vardé explora la historia de Stax Records, el legendario sello de soul sureño que unió a músicos blancos y negros en Memphis durante los años 60, convirtiéndose en banda sonora del Movimiento por los Derechos Civiles.',
-         'tapas/grabando.jpg'
-     )">
-
-    <div class="book-cover">
-
-        <img src="tapas/grabando.jpg"
-             alt="Grabando emociones – La Revolución de Stax Records">
-
-                </div>
-
-                <h3 class="book-title">
-                    Grabando
-                </h3>
-
-                <p class="book-publisher">
-                    Grupo Editor Colectivo Flota Negra
-                </p>
-
-            </article>
-
-
-            <!-- LIBRO 8 -->
-
-<article class="book"
-     onclick="openBookPopup(
-         'Un pleno al 10 – Crónica de un triunfo épico en Las Vegas',
-         '2025 · Luciano Jurnet',
-         'En esta crónica periodística, Luciano Jurnet narra su viaje a Las Vegas para presenciar una pelea crucial: la victoria por nocaut técnico en el décimo round del boxeador santafesino Mirco Cuello frente al mexicano Christian Olivo.',
-         'tapas/un_pleno.png'
-     )">
-
-    <div class="book-cover">
-
-        <img src="tapas/un_pleno.png"
-             alt="Un pleno al 10 – Crónica de un triunfo épico en Las Vegas">
-
-                </div>
-
-                <h3 class="book-title">
-                    Un pleno
-                </h3>
-
-                <p class="book-publisher">
-                    Grupo Editor Colectivo Flota Negra
-                </p>
-
-            </article>
-
-
-        </div>
-
-        <button class="carousel-arrow carousel-right" onclick="scrollBooks(1)">
-            →
-        </button>
-
-    </div>
-
-</section>
-
-<!-- =========================
-     POPUP DE LIBRO
-========================= -->
-
-<div class="book-popup" id="bookPopup">
-
-    <div class="book-popup-content">
-
-        <button class="book-popup-close" onclick="closeBookPopup()">
-            ×
-        </button>
-
-        <div class="book-popup-inner">
-
-            <div class="book-popup-cover">
-                <img id="popupCover" src="" alt="">
-            </div>
-
-            <div class="book-popup-text">
-
-                <h2 id="popupTitle"></h2>
-
-                <p id="popupPublisher"></p>
-
-                <div id="popupDescription"></div>
+                <button class="carousel-arrow carousel-right" onclick="scrollBooks(1)">
+                    →
+                </button>
 
             </div>
 
-        </div>
+        </section>
 
-    </div>
 
-</div>
         <!-- =========================
-             SECCIONES FUTURAS
+             POPUP DE LIBRO
         ========================= -->
 
-       <section id="editoriales">
+        <div class="book-popup" id="bookPopup">
 
-    <h2 class="section-title">
-        Editoriales
-    </h2>
+            <div class="book-popup-content">
 
-    <p class="editoriales-description">
+                <button class="book-popup-close" onclick="closeBookPopup()">
+                    ×
+                </button>
 
-        <strong>Tres sellos, un mismo proyecto editorial.</strong>
+                <div class="book-popup-inner">
 
-        Colectivo Flota Negra, Minton Ediciones e Izquierda en Cross
-        trabajan de manera mancomunada, compartiendo una mirada y una
-        forma de entender la edición. Cada sello nació como una
-        ramificación del proyecto original, con el propósito de ampliar
-        los territorios, las voces y las obras que podemos acompañar
-        y publicar.
+                    <div class="book-popup-cover">
+                        <img id="popupCover" src="" alt="">
+                    </div>
 
-    </p>
+                    <div class="book-popup-text">
 
-    <div class="editoriales-grid">
+                        <h2 id="popupTitle"></h2>
 
-        <div class="editorial">
-            <img
-                src="logos/flota_negro.png"
-                alt="Grupo Editor Colectivo Flota Negra">
-        </div>
+                        <p id="popupPublisher"></p>
 
-        <div class="editorial">
-            <img
-                src="logos/MintonLogoBlue.png"
-                alt="Minton Ediciones">
-        </div>
+                        <div id="popupDescription"></div>
 
-        <div class="editorial">
-            <img
-                src="logos/IZQUIERDA.png"
-                alt="Izquierda en Cross">
-        </div>
+                    </div>
 
-    </div>
+                </div>
 
-</section>
-
-
-       <section id="quienes-somos">
-
-    <h2 class="section-title">
-        Quiénes somos
-    </h2>
-
-    <div class="about-grid">
-
-        <div class="about-text">
-
-            <h3>
-                Una propuesta editorial afrocentrada,
-                autogestiva y cooperativa
-            </h3>
-
-            <p>
-                Con el objetivo de brindar un espacio genuino para la
-                difusión de la cultura afrocentrada, el Grupo Editor
-                Colectivo Flota Negra consolida su presencia en el
-                mercado editorial independiente.
-            </p>
-
-            <p>
-                Fundada en julio de 2023 por Roberto Ruiz Sena
-                (conocido como "Malungo"), la editorial nació tras
-                una década de trabajo en la temática bibliográfica
-                afrocentrada.
-            </p>
-
-            <p>
-                El proyecto surge como respuesta a la falta de espacios
-                en editoriales convencionales. Junto al escritor y
-                editor Tony Vardé, llevan adelante esta iniciativa en
-                la que escritor y editor hablan el mismo idioma cultural.
-            </p>
-
-        </div>
-
-        <div class="about-image">
-
-            <img
-                src="somos/rupert_tony.jpg"
-                alt="Roberto Ruiz Sena y Tony Vardé">
-
-        </div>
-
-    </div>
-
-</section>
-
-
-       <section id="contacto">
-
-    <h2 class="section-title">
-        Contacto
-    </h2>
-
-    <div class="contact-grid">
-
-        <div class="contact-item">
-
-            <h3>Redes</h3>
-
-            <a href="https://www.instagram.com/colectivoflotanegragrupoeditor/"
-               target="_blank"
-               rel="noopener">
-                Instagram · Colectivo Flota Negra
-            </a>
-
-            <a href="https://www.instagram.com/minton.ediciones/"
-               target="_blank"
-               rel="noopener">
-                Instagram · Minton Ediciones
-            </a>
-
-            <a href="https://www.instagram.com/izquierda_en_cross/"
-               target="_blank"
-               rel="noopener">
-                Instagram · Izquierda en Cross
-            </a>
-
-            <a href="https://www.instagram.com/malungo_libros/"
-               target="_blank"
-               rel="noopener">
-                Instagram · Malungo Libros
-            </a>
+            </div>
 
         </div>
 
 
-        <div class="contact-item">
+        <!-- =========================
+             CONTACTO
+        ========================= -->
 
-            <h3>Puesto 44 · Malungo Libros</h3>
+        <section id="contacto">
 
-            <p>
-    Encontrá nuestros libros en el Puesto 44
-    de Malungo Libros de la Feria de libros de Parque Centenario
-    (en la esquina de Leopoldo Marechal
-    y Av. Díaz Vélez, Ciudad Autónoma de Buenos Aires, Argentina)
-</p>
+            <h2 class="section-title">
+                Contacto
+            </h2>
 
-            <a
-                href="https://maps.app.goo.gl/noSVcrU1MXrXq9yH9"
-                target="_blank"
-                rel="noopener"
-                class="map-button">
-                Ver ubicación →
-            </a>
+            <div class="contact-grid">
 
-        </div>
+                <div class="contact-item">
 
-    </div>
+                    <h3>Redes</h3>
 
-</section>
+                    <a href="https://www.instagram.com/colectivoflotanegragrupoeditor/"
+                       target="_blank"
+                       rel="noopener">
+                        Instagram · Colectivo Flota Negra
+                    </a>
+
+                    <a href="https://www.instagram.com/minton.ediciones/"
+                       target="_blank"
+                       rel="noopener">
+                        Instagram · Minton Ediciones
+                    </a>
+
+                    <a href="https://www.instagram.com/izquierda_en_cross/"
+                       target="_blank"
+                       rel="noopener">
+                        Instagram · Izquierda en Cross
+                    </a>
+
+                    <a href="https://www.instagram.com/malungo_libros/"
+                       target="_blank"
+                       rel="noopener">
+                        Instagram · Malungo Libros
+                    </a>
+
+                </div>
+
+
+                <div class="contact-item">
+
+                    <h3>Puesto 44 · Malungo Libros</h3>
+
+                    <p>
+                        Encontrá nuestros libros en el Puesto 44
+                        de Malungo Libros de la Feria de libros de Parque Centenario
+                        (en la esquina de Leopoldo Marechal
+                        y Av. Díaz Vélez, Ciudad Autónoma de Buenos Aires, Argentina)
+                    </p>
+
+                    <a
+                        href="https://maps.app.goo.gl/noSVcrU1MXrXq9yH9"
+                        target="_blank"
+                        rel="noopener"
+                        class="map-button">
+                        Ver ubicación →
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
 
     </main>
 
@@ -1294,26 +1328,29 @@
             });
 
         }
-function openBookPopup(title, publisher, description, cover) {
 
-    document.getElementById("popupTitle").textContent = title;
+        function openBookPopup(title, publisher, description, cover) {
 
-    document.getElementById("popupPublisher").textContent = publisher;
+            document.getElementById("popupTitle").textContent = title;
 
-    document.getElementById("popupDescription").textContent = description;
+            document.getElementById("popupPublisher").textContent = publisher;
 
-    document.getElementById("popupCover").src = cover;
+            document.getElementById("popupDescription").textContent = description;
 
-    document.getElementById("popupCover").alt = title;
+            document.getElementById("popupCover").src = cover;
 
-    document.getElementById("bookPopup").classList.add("active");
+            document.getElementById("popupCover").alt = title;
 
-}
+            document.getElementById("bookPopup").classList.add("active");
+
+        }
+
         function closeBookPopup() {
 
-    document.getElementById("bookPopup").classList.remove("active");
+            document.getElementById("bookPopup").classList.remove("active");
 
-}
+        }
+
     </script>
 
 </body>
