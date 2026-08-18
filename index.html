@@ -315,7 +315,50 @@
             background: #fff;
             color: #000;
         }
+/* =========================
+   EDITORIALES
+========================= */
 
+.editoriales-description {
+    max-width: 800px;
+    margin-bottom: 60px;
+
+    color: #bdbdbd;
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+.editoriales-description strong {
+    display: block;
+    color: #f2f2f2;
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.editoriales-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px;
+
+    align-items: center;
+}
+
+.editorial {
+    height: 180px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+}
+
+.editorial img {
+    max-width: 100%;
+    max-height: 140px;
+
+    object-fit: contain;
+}
         /* =========================
            FOOTER
         ========================= */
@@ -747,19 +790,48 @@
              SECCIONES FUTURAS
         ========================= -->
 
-        <section id="editoriales">
+       <section id="editoriales">
 
-            <h2 class="section-title">
-                Editoriales
-            </h2>
+    <h2 class="section-title">
+        Editoriales
+    </h2>
 
-            <p>
-                Grupo Editor Colectivo Flota Negra ·
-                Minton Ediciones ·
-                Izquierda en Cross
-            </p>
+    <p class="editoriales-description">
 
-        </section>
+        <strong>Tres sellos, un mismo proyecto editorial.</strong>
+
+        Colectivo Flota Negra, Minton Ediciones e Izquierda en Cross
+        trabajan de manera mancomunada, compartiendo una mirada y una
+        forma de entender la edición. Cada sello nació como una
+        ramificación del proyecto original, con el propósito de ampliar
+        los territorios, las voces y las obras que podemos acompañar
+        y publicar.
+
+    </p>
+
+    <div class="editoriales-grid">
+
+        <div class="editorial">
+            <img
+                src="logos/flota_negro.png"
+                alt="Grupo Editor Colectivo Flota Negra">
+        </div>
+
+        <div class="editorial">
+            <img
+                src="logos/MintonLogo2026.png"
+                alt="Minton Ediciones">
+        </div>
+
+        <div class="editorial">
+            <img
+                src="logos/IZQUIERDA.jpg"
+                alt="Izquierda en Cross">
+        </div>
+
+    </div>
+
+</section>
 
 
         <section id="quienes-somos">
