@@ -401,6 +401,141 @@
     object-fit: cover;
 }
         /* =========================
+   POPUP DE LIBRO
+========================= */
+
+.book-popup {
+    display: none;
+
+    position: fixed;
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.85);
+
+    z-index: 2000;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 30px;
+}
+
+.book-popup.active {
+    display: flex;
+}
+
+.book-popup-content {
+    position: relative;
+
+    width: 100%;
+    max-width: 850px;
+
+    max-height: 90vh;
+
+    overflow-y: auto;
+
+    background: #111;
+
+    border: 1px solid #333;
+
+    padding: 50px;
+}
+
+.book-popup-close {
+    position: absolute;
+
+    top: 15px;
+    right: 20px;
+
+    background: none;
+    border: none;
+
+    color: white;
+
+    font-size: 32px;
+
+    cursor: pointer;
+}
+
+.book-popup-inner {
+    display: grid;
+
+    grid-template-columns: 280px 1fr;
+
+    gap: 50px;
+
+    align-items: center;
+}
+
+.book-popup-cover img {
+    width: 100%;
+    height: auto;
+
+    display: block;
+}
+
+.book-popup-text h2 {
+    font-size: 32px;
+
+    margin-bottom: 10px;
+}
+
+.book-popup-text > p {
+    color: #888;
+
+    font-size: 13px;
+
+    margin-bottom: 25px;
+}
+
+.book-popup-text #popupDescription {
+    color: #cfcfcf;
+
+    font-size: 16px;
+
+    line-height: 1.7;
+}
+        /* =========================
+   POPUP EN CELULAR
+========================= */
+
+@media (max-width: 700px) {
+
+    .book-popup {
+        padding: 15px;
+    }
+
+    .book-popup-content {
+        max-height: 90vh;
+        padding: 40px 25px 30px;
+    }
+
+    .book-popup-inner {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .book-popup-cover {
+        text-align: center;
+    }
+
+    .book-popup-cover img {
+        width: 180px;
+        max-width: 100%;
+        margin: auto;
+    }
+
+    .book-popup-text h2 {
+        font-size: 25px;
+    }
+
+    .book-popup-text #popupDescription {
+        font-size: 15px;
+        text-align: justify;
+    }
+
+}
+        /* =========================
            FOOTER
         ========================= */
 
@@ -699,7 +834,13 @@
 
             <!-- LIBRO 1 -->
 
-            <article class="book">
+            <article class="book"
+         onclick="openBookPopup(
+             '¡Escúchate Esto! – 75 Joyas de la Música Soul',
+             '2023 · Tony Vardé · Jose Luis Zepi Crespo',
+             'Entre Madrid y Buenos Aires, dos escritores y amantes de la música comparten una lista de canciones de la música soul, cuyos brazos también alcanzan algunas gemas de la música jamaiquina, el blues e incluso el jazz.',
+             'tapas/escuchate.jpg'
+         )">
 
                 <div class="book-cover">
 
@@ -883,7 +1024,39 @@
 
 </section>
 
+<!-- =========================
+     POPUP DE LIBRO
+========================= -->
 
+<div class="book-popup" id="bookPopup">
+
+    <div class="book-popup-content">
+
+        <button class="book-popup-close" onclick="closeBookPopup()">
+            ×
+        </button>
+
+        <div class="book-popup-inner">
+
+            <div class="book-popup-cover">
+                <img id="popupCover" src="" alt="">
+            </div>
+
+            <div class="book-popup-text">
+
+                <h2 id="popupTitle"></h2>
+
+                <p id="popupPublisher"></p>
+
+                <div id="popupDescription"></div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
         <!-- =========================
              SECCIONES FUTURAS
         ========================= -->
@@ -1077,7 +1250,26 @@
             });
 
         }
+function openBookPopup(title, publisher, description, cover) {
 
+    document.getElementById("popupTitle").textContent = title;
+
+    document.getElementById("popupPublisher").textContent = publisher;
+
+    document.getElementById("popupDescription").textContent = description;
+
+    document.getElementById("popupCover").src = cover;
+
+    document.getElementById("popupCover").alt = title;
+
+    document.getElementById("bookPopup").classList.add("active");
+
+}
+        function closeBookPopup() {
+
+    document.getElementById("bookPopup").classList.remove("active");
+
+}
     </script>
 
 </body>
