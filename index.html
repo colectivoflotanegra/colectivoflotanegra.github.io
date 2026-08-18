@@ -253,7 +253,40 @@
         /* =========================
            FLECHAS
         ========================= */
+.carousel-arrow {
+    position: absolute;
 
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: 42px;
+    height: 42px;
+
+    border: 1px solid #555;
+    background: rgba(11, 11, 11, 0.85);
+    color: white;
+
+    cursor: pointer;
+
+    font-size: 20px;
+
+    z-index: 10;
+
+    transition: background 0.3s ease;
+}
+
+.carousel-arrow:hover {
+    background: white;
+    color: black;
+}
+
+.carousel-left {
+    left: -10px;
+}
+
+.carousel-right {
+    right: -10px;
+}
         .book-buttons {
             display: flex;
             gap: 10px;
@@ -516,7 +549,9 @@
     </h2>
 
     <div class="books-wrapper">
-
+<button class="carousel-arrow carousel-left" onclick="scrollBooks(-1)">
+    ←
+</button>
 
         <div class="books" id="books">
 
@@ -698,6 +733,10 @@
 
 
         </div>
+
+        <button class="carousel-arrow carousel-right" onclick="scrollBooks(1)">
+            →
+        </button>
 
     </div>
 
