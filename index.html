@@ -100,7 +100,18 @@
         .hero-content {
             max-width: 950px;
         }
+.hero-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 45px;
+}
 
+.hero-title img {
+    width: 180px;
+    height: 180px;
+    object-fit: contain;
+}
         .hero h1 {
             font-size: clamp(48px, 9vw, 110px);
             line-height: 0.95;
@@ -448,10 +459,17 @@
 
             <div class="hero-content">
 
-                <h1>
-                    COLECTIVO<br>
-                    FLOTA NEGRA
-                </h1>
+                <div class="hero-title">
+
+    <h1>
+        COLECTIVO<br>
+        FLOTA NEGRA
+    </h1>
+
+    <img src="logos/flota_negro.jpg"
+         alt="Logo Colectivo Flota Negra">
+
+</div>
 
                 <p class="hero-subtitle">
 
