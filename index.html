@@ -524,7 +524,27 @@
 
             line-height: 1.7;
         }
+.popup-more {
+    display: inline-block;
 
+    margin-top: 25px;
+    padding: 12px 20px;
+
+    border: 1px solid #555;
+
+    color: white;
+    text-decoration: none;
+
+    font-size: 13px;
+    letter-spacing: 1px;
+
+    transition: all 0.3s ease;
+}
+
+.popup-more:hover {
+    background: white;
+    color: black;
+}
         /* =========================
            POPUP EN CELULAR
         ========================= */
@@ -1039,7 +1059,8 @@
                              'Una canción hizo la diferencia',
                              '2025 · Tony Vardé',
                              'Reúne artistas y canciones que cruzaron la historia de los afroamericanos y el Movimiento por los Derechos Civiles en los Estados Unidos. Desde la esclavitud hasta el Black Lives Matter, más de 150 años de historias de racismo, opresión y violencia policial, atravesadas por artistas que hicieron evolucionar la música desde los spirituals y el góspel hasta el hip hop.',
-                             'tapas/una_cancion.jpg'
+                             'tapas/una_cancion.jpg',
+'libros/una-cancion-hizo-la-diferencia.html'
                          )">
 
                         <div class="book-cover">
@@ -1236,6 +1257,13 @@
                         <p id="popupPublisher"></p>
 
                         <div id="popupDescription"></div>
+                        <a
+    id="popupMore"
+    class="popup-more"
+    href="#"
+>
+    Más información →
+</a>
 
                     </div>
 
@@ -1347,7 +1375,23 @@
 
         }
 
-        function openBookPopup(title, publisher, description, cover) {
+        function openBookPopup(title, publisher, description, cover, page) {
+
+    document.getElementById("popupTitle").textContent = title;
+
+    document.getElementById("popupPublisher").textContent = publisher;
+
+    document.getElementById("popupDescription").textContent = description;
+
+    document.getElementById("popupCover").src = cover;
+
+    document.getElementById("popupCover").alt = title;
+
+    document.getElementById("popupMore").href = page;
+
+    document.getElementById("bookPopup").classList.add("active");
+
+}
 
             document.getElementById("popupTitle").textContent = title;
 
