@@ -1,1 +1,400 @@
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Etiopía: Tierra de Dioses 2026 | Osvaldo Mane Congo | Colectivo Flota Negra</title>
+
+    <meta name="description" content="Etiopía: Tierra de Dioses 2026, de Osvaldo Mane Congo. Edición argentina publicada por Colectivo Flota Negra Grupo Editor. Una obra sobre Etiopía, África ancestral, historia, cultura y espiritualidad.">
+
+    <meta name="author" content="Osvaldo Mane Congo González">
+
+    <link rel="canonical" href="https://colectivoflotanegra.github.io/libros/etiopia.html">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            background: #0b0b0b;
+            color: #eeeeee;
+            font-family: "Segoe UI", Arial, sans-serif;
+            line-height: 1.7;
+        }
+
+        a {
+            color: #77aab5;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        /* ENCABEZADO */
+
+        header {
+            padding: 50px 20px 30px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.6rem;
+            line-height: 1.2;
+            color: #ffffff;
+        }
+
+        header .subtitle {
+            margin-top: 12px;
+            font-size: 1.25rem;
+            color: #77aab5;
+        }
+
+        /* LIBRO */
+
+        .book-section {
+            display: flex;
+            gap: 50px;
+            align-items: flex-start;
+            padding: 30px 0 60px;
+        }
+
+        .book-cover {
+            flex: 0 0 320px;
+            text-align: center;
+        }
+
+        .book-cover img {
+            width: 100%;
+            max-width: 320px;
+            height: auto;
+            border-radius: 4px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.6);
+        }
+
+        .book-info {
+            flex: 1;
+        }
+
+        .book-info h2 {
+            margin-top: 0;
+            color: #ffffff;
+            font-size: 2rem;
+        }
+
+        .book-data {
+            margin: 25px 0;
+            padding: 20px;
+            border-left: 3px solid #77aab5;
+            background: #111111;
+        }
+
+        .book-data p {
+            margin: 7px 0;
+        }
+
+        .book-data strong {
+            color: #77aab5;
+        }
+
+        /* SECCIONES */
+
+        section {
+            padding: 30px 0;
+        }
+
+        section h2 {
+            color: #77aab5;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+
+        .text {
+            font-size: 1.08rem;
+            color: #dddddd;
+        }
+
+        /* ENLACES */
+
+        .links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            margin-top: 20px;
+        }
+
+        .links a {
+            display: inline-block;
+            padding: 11px 18px;
+            border: 1px solid #77aab5;
+            border-radius: 4px;
+            transition: 0.2s;
+        }
+
+        .links a:hover {
+            background: #77aab5;
+            color: #000000;
+            text-decoration: none;
+        }
+
+        /* VOLVER */
+
+        .back {
+            text-align: center;
+            padding: 50px 0;
+        }
+
+        .back a {
+            display: inline-block;
+            padding: 12px 24px;
+            border: 1px solid #77aab5;
+            border-radius: 4px;
+        }
+
+        .back a:hover {
+            background: #77aab5;
+            color: #000000;
+            text-decoration: none;
+        }
+
+        footer {
+            border-top: 1px solid #222222;
+            text-align: center;
+            padding: 30px 20px;
+            color: #888888;
+            font-size: 0.9rem;
+        }
+
+        /* CELULAR */
+
+        @media (max-width: 700px) {
+
+            header {
+                padding: 35px 15px 20px;
+            }
+
+            header h1 {
+                font-size: 2rem;
+            }
+
+            header .subtitle {
+                font-size: 1.05rem;
+            }
+
+            .book-section {
+                flex-direction: column;
+                gap: 30px;
+                align-items: center;
+                padding-top: 20px;
+            }
+
+            .book-cover {
+                flex: none;
+                width: 75%;
+                max-width: 300px;
+            }
+
+            .book-info {
+                width: 100%;
+            }
+
+            .book-info h2 {
+                font-size: 1.6rem;
+                text-align: center;
+            }
+
+            section h2 {
+                font-size: 1.5rem;
+            }
+
+            .text {
+                font-size: 1rem;
+            }
+
+            .links {
+                flex-direction: column;
+            }
+
+            .links a {
+                text-align: center;
+                width: 100%;
+            }
+        }
+    </style>
+
+    <!-- DATOS ESTRUCTURADOS PARA GOOGLE -->
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Book",
+        "name": "Etiopía: Tierra de Dioses 2026",
+        "author": {
+            "@type": "Person",
+            "name": "Osvaldo Mane Congo González"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Colectivo Flota Negra Grupo Editor",
+            "url": "https://colectivoflotanegra.github.io/"
+        },
+        "datePublished": "2026",
+        "inLanguage": "es",
+        "genre": [
+            "Literatura",
+            "Cultura",
+            "Historia",
+            "Espiritualidad",
+            "África"
+        ],
+        "url": "https://colectivoflotanegra.github.io/libros/etiopia.html"
+    }
+    </script>
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <h1>Etiopía: Tierra de Dioses 2026</h1>
+            <div class="subtitle">Osvaldo «Mane Congo» González</div>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <div class="book-section">
+
+            <div class="book-cover">
+                <img src="../tapas/etiopia.png"
+                     alt="Tapa del libro Etiopía: Tierra de Dioses 2026 de Osvaldo Mane Congo González">
+            </div>
+
+            <div class="book-info">
+
+                <h2>Etiopía: Tierra de Dioses 2026</h2>
+
+                <div class="book-data">
+                    <p><strong>Autor:</strong> Osvaldo «Mane Congo» González</p>
+                    <p><strong>Editorial:</strong> Colectivo Flota Negra Grupo Editor</p>
+                    <p><strong>Año:</strong> 2026</p>
+                    <p><strong>Edición:</strong> Argentina</p>
+                    <p><strong>Género:</strong> Cultura, historia, espiritualidad y literatura afrocentrada</p>
+                </div>
+
+                <p class="text">
+                    <strong>Etiopía: Tierra de Dioses 2026</strong> es una obra de
+                    Osvaldo «Mane Congo» González que propone un acercamiento
+                    a la historia, la espiritualidad y la cultura de Etiopía y del
+                    África ancestral.
+                </p>
+
+                <p class="text">
+                    A través de una mirada que entrelaza mito, historia y fe, el autor
+                    recorre tradiciones, memorias y conocimientos vinculados con una
+                    tierra fundamental para la historia y la cultura africana.
+                </p>
+
+            </div>
+        </div>
+
+        <section>
+            <h2>Sobre el libro</h2>
+
+            <p class="text">
+                <strong>Etiopía: Tierra de Dioses 2026</strong> invita a descubrir
+                el corazón sagrado del África ancestral, recorriendo una cosmovisión
+                en la que la memoria de los ancestros, las tradiciones etíopes y la
+                espiritualidad ocupan un lugar central.
+            </p>
+
+            <p class="text">
+                La obra continúa la línea de investigación, escritura y difusión
+                cultural desarrollada por Mane Congo en torno a Etiopía, el
+                etiopianismo, la cultura africana y la tradición Rastafari.
+            </p>
+
+            <p class="text">
+                Esta edición argentina de <strong>Etiopía: Tierra de Dioses</strong>
+                es publicada por <strong>Colectivo Flota Negra Grupo Editor</strong>
+                en 2026.
+            </p>
+        </section>
+
+        <section>
+            <h2>Sobre el autor</h2>
+
+            <p class="text">
+                <strong>Osvaldo González, Mane Congo</strong>, es escritor y traductor
+                de literatura etíope y afrocentrada, músico de tambores Nyahbinghi y
+                reggae, y docente especializado en Rastafari, Etiopía y etiopianismo.
+            </p>
+
+            <p class="text">
+                Su trayectoria combina literatura, investigación, música y difusión
+                cultural. Desde Uruguay desarrolla una labor vinculada con la cultura
+                africana, la tradición Rastafari y la recuperación de conocimientos
+                relacionados con Etiopía y la diáspora africana.
+            </p>
+
+            <p class="text">
+                Es autor de <em>Antigua Orden Mística de Etiopía</em> y de
+                <em>Etiopía: Tierra de Dioses</em>.
+            </p>
+        </section>
+
+        <section>
+            <h2>ENLACES</h2>
+
+            <div class="links">
+
+                <a href="https://pelagatos.com.ar/2026/02/13/libro-etiopia-tierra-de-dioses-por-osvaldo-mane-congo-gonzalez/"
+                   target="_blank"
+                   rel="noopener">
+                    Nota sobre el libro – PelaGatos
+                </a>
+
+                <a href="https://www.instagram.com/etiopis.mane/"
+                   target="_blank"
+                   rel="noopener">
+                    Instagram de Mane Congo
+                </a>
+
+                <a href="https://culturaenlinea.uy/agente/15504/#info"
+                   target="_blank"
+                   rel="noopener">
+                    Ficha del autor – Cultura en Línea
+                </a>
+
+            </div>
+        </section>
+
+        <div class="back">
+            <a href="../index.html">← Volver a Colectivo Flota Negra</a>
+        </div>
+
+    </main>
+
+    <footer>
+        © Colectivo Flota Negra Grupo Editor
+    </footer>
+
+</body>
+</html>
+```
 
