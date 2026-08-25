@@ -46,13 +46,19 @@
         }
 
         header {
-    position: relative;
-    padding: 20px;
-    text-align: left;
+    padding: 25px 5%;
+    border-bottom: 1px solid #222;
 }
 
 header a {
-    font-size: 1rem;
+    color: white;
+    text-decoration: none;
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+
+header a:hover {
+    opacity: 0.6;
 }
 
         .book-section {
@@ -172,9 +178,13 @@ header a {
 
         @media (max-width: 700px) {
 
-            header {
-                padding: 15px;
-            }
+           header {
+    padding: 20px;
+}
+
+header a {
+    font-size: 11px;
+}
 
             .book-section {
                 flex-direction: column;
@@ -257,15 +267,11 @@ header a {
 
     <header>
 
-        <div class="container">
+    <a href="../index.html">
+        ← Colectivo Flota Negra
+    </a>
 
-            <a href="../index.html">
-                ← Colectivo Flota Negra
-            </a>
-
-        </div>
-
-    </header>
+</header>
 
 
     <main class="container">
