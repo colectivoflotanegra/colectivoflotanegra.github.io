@@ -789,7 +789,77 @@
             }
 
         }
+/* =========================
+   BOTÓN FLOTANTE NUEVO LIBRO
+========================= */
 
+.new-book-float {
+    position: fixed;
+    right: 28px;
+    bottom: 28px;
+    z-index: 1500;
+
+    width: 112px;
+    height: 112px;
+    border-radius: 50%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+
+    background: rgba(11, 11, 11, 0.94);
+    border: 1px solid #aaa;
+    color: white;
+
+    text-decoration: none;
+    text-align: center;
+
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.5);
+
+    transition: all 0.3s ease;
+}
+
+.new-book-float:hover {
+    background: white;
+    color: #0b0b0b;
+    border-color: white;
+    transform: scale(1.07);
+}
+
+.new-book-float strong {
+    font-size: 17px;
+    letter-spacing: 1px;
+}
+
+.new-book-float span {
+    font-size: 9px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.new-book-float:focus-visible {
+    outline: 2px solid white;
+    outline-offset: 4px;
+}
+
+@media (max-width: 700px) {
+    .new-book-float {
+        width: 92px;
+        height: 92px;
+        right: 16px;
+        bottom: 18px;
+    }
+
+    .new-book-float strong {
+        font-size: 14px;
+    }
+
+    .new-book-float span {
+        font-size: 8px;
+    }
+}
     </style>
 </head>
 
@@ -1377,7 +1447,18 @@
 
     </main>
 
+    <!-- BOTÓN FLOTANTE NUEVO LIBRO -->
 
+    <a
+        id="newBookFloat"
+        class="new-book-float"
+        href="libros/el-arte-para-mi-fue-un-reto.html"
+        aria-label="Nuevo libro: El arte para mí fue un reto, de Elvira Cervera">
+
+        <strong>¡NUEVO!</strong>
+        <span>Elvira Cervera</span>
+
+    </a>
     <!-- =========================
          FOOTER
     ========================= -->
@@ -1434,7 +1515,27 @@
             document.getElementById("bookPopup").classList.remove("active");
 
         }
+        // Mostrar el anuncio una sola vez por visitante
 
+        (function() {
+
+            const button = document.getElementById("newBookFloat");
+            const key = "flotaNegraNuevoElviraV1";
+
+            if (!button) return;
+
+            try {
+                if (localStorage.getItem(key) === "1") {
+                    button.remove();
+                } else {
+                    localStorage.setItem(key, "1");
+                }
+            } catch (error) {
+                // Si el navegador bloquea el almacenamiento,
+                // el botón continúa visible.
+            }
+
+        })();
     </script>
 
 </body>
