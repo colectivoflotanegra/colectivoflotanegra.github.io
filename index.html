@@ -790,7 +790,7 @@
 
         }
 /* =========================
-   BOTÓN FLOTANTE NUEVO LIBRO
+   ESTRELLA NUEVO LANZAMIENTO
 ========================= */
 
 .new-book-float {
@@ -799,43 +799,53 @@
     bottom: 28px;
     z-index: 1500;
 
-    width: 112px;
-    height: 112px;
-    border-radius: 50%;
+    width: 145px;
+    height: 145px;
 
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 5px;
+    gap: 7px;
 
-    background: rgba(11, 11, 11, 0.94);
-    border: 1px solid #aaa;
+    background: #d71920;
     color: white;
-
     text-decoration: none;
     text-align: center;
 
-    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.5);
+    clip-path: polygon(
+        50% 0%, 60% 12%, 72% 4%, 78% 18%,
+        93% 15%, 91% 30%, 100% 40%,
+        88% 50%, 100% 60%, 90% 70%,
+        94% 85%, 78% 82%, 72% 96%,
+        60% 88%, 50% 100%, 40% 88%,
+        28% 96%, 22% 82%, 7% 85%,
+        10% 70%, 0% 60%, 12% 50%,
+        0% 40%, 10% 30%, 6% 15%,
+        22% 18%, 28% 4%, 40% 12%
+    );
 
-    transition: all 0.3s ease;
+    filter: drop-shadow(0 5px 12px rgba(0,0,0,0.7));
+
+    transform: rotate(-8deg);
+    transition: transform 0.3s ease, background 0.3s ease;
 }
 
 .new-book-float:hover {
-    background: white;
-    color: #0b0b0b;
-    border-color: white;
-    transform: scale(1.07);
+    background: #f02028;
+    transform: rotate(0deg) scale(1.1);
 }
 
 .new-book-float strong {
-    font-size: 17px;
+    font-size: 19px;
+    font-weight: 900;
     letter-spacing: 1px;
 }
 
 .new-book-float span {
-    font-size: 9px;
-    letter-spacing: 1px;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
     text-transform: uppercase;
 }
 
@@ -846,18 +856,18 @@
 
 @media (max-width: 700px) {
     .new-book-float {
-        width: 92px;
-        height: 92px;
-        right: 16px;
+        width: 120px;
+        height: 120px;
+        right: 14px;
         bottom: 18px;
     }
 
     .new-book-float strong {
-        font-size: 14px;
+        font-size: 16px;
     }
 
     .new-book-float span {
-        font-size: 8px;
+        font-size: 9px;
     }
 }
     </style>
@@ -1455,8 +1465,8 @@
         href="libros/el-arte-para-mi-fue-un-reto.html"
         aria-label="Nuevo libro: El arte para mí fue un reto, de Elvira Cervera">
 
-        <strong>¡NUEVO!</strong>
-        <span>Elvira Cervera</span>
+        <strong>¡NUEVO</strong>
+        <span>LANZAMIENTO!</span>
 
     </a>
     <!-- =========================
@@ -1520,7 +1530,7 @@
         (function() {
 
             const button = document.getElementById("newBookFloat");
-            const key = "flotaNegraNuevoElviraV1";
+            const key = "flotaNegraNuevoElviraV2";
 
             if (!button) return;
 
